@@ -4,7 +4,7 @@ class CreateChemicalSafetyFeatures < ActiveRecord::Migration[5.2]
     	t.integer :work_item_id
     	t.integer :niche_id
     	t.text :summary
-    	t.timestampsra
+    	t.timestamps
     end
   end
 end
