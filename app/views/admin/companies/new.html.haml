@@ -1,0 +1,13 @@
+%section.form-company.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = bootstrap_form_for (@company), url: admin_companies_path  do |f| 
+        %header
+          %h1 Create a Company
+        %fieldset
+          = f.text_field :name   
+          = f.text_field :address
+          = f.collection_select :niche_id, Niche.all, :id, :name, prompt: 'Select Niche'
+
+        %fieldset
+          = f.submit "Submit", class: "btn btn-confirm" 

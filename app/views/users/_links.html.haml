@@ -1,0 +1,10 @@
+- if (completed)
+	%li
+		= link_to "Pending Work Items (#{pending_items_count(@user)})", user_work_items_path
+	%li.active
+		= link_to "Completed Work Items (#{completed_items_count(@user)})", user_completed_work_items_path
+- else 
+	%li.active
+		= link_to "Pending Work Items (#{pending_items_count(@user)})", user_work_items_path
+	%li
+		= link_to "Completed Work Items (#{completed_items_count(@user)})", user_completed_work_items_path

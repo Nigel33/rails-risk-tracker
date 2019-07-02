@@ -1,0 +1,13 @@
+%section.form-work-item.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = bootstrap_form_for (@work_item), url: admin_work_items_path do |f| 
+        %header
+          %h1 Create a Work Item
+        %fieldset
+          = f.collection_select :company_id, Company.all, :id, :name, prompt: "Select Company"
+          = f.collection_select :user_id, User.all, :id, :full_name, {prompt: "Select Consultant", label: "Consultant"}
+          = f.date_field :due_date
+
+        %fieldset
+          = f.submit "Submit", class: "btn btn-confirm" 

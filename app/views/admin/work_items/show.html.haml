@@ -1,0 +1,15 @@
+- niche = @work_item.niche_name 
+
+- case niche 
+- when 'chemical'
+  .report
+    = link_to "Review Report", new_or_edit_review(@work_item, @work_item.review)
+  = render 'niches/chemicals/index_partial'
+- when 'manufacturing'
+  .report
+    = link_to "Review Report", new_or_edit_review(@work_item, @work_item.review)
+  = render 'niches/manufacturings/index_partial' 
+
+
+
+

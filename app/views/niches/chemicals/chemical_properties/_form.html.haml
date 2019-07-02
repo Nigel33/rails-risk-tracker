@@ -1,0 +1,11 @@
+%section.form-work-item.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = bootstrap_form_for (@chemical_property), url: path do |f| 
+        %header
+          %h1 Properties
+        %fieldset
+          = f.text_area :summary, placeholder: 'Summary of Properties'
+        %fieldset
+          = f.submit "Submit", class: "btn btn-confirm" 
+      

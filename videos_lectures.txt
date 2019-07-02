@@ -1,0 +1,15 @@
+features overview
+paloma for JS 
+refresh JS after paloma reload - how to solve redirect
+custom CSS checkbox
+persisting checkb
+models structure
+testing with TDD development for creating, editing, update etc
+testign with TDD for analytics show refactoring
+- maybe do feature test. 
+using ajax for udpating a model attr
+using ajax to create modal to display with rails
+
+Tomorrow 
+- finish up checkboxes 
+- make sure styles are fine 

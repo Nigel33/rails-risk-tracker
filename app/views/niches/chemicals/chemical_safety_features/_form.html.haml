@@ -1,0 +1,32 @@
+%section.form-work-item.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = bootstrap_form_for (@chemical_safety_feature), url: path do |f| 
+        %header
+          %h1 Safety Features
+        %fieldset
+          %header 
+            %h4 Check the following items if present in the facility 
+          .checkbox-container
+            = f.check_box :fire_extinguisher, {}, checked_value = true, unchecked_value = false 
+            = f.check_box :first_aid_kit, {}, checked_value = true, unchecked_value = false 
+            = f.check_box :ppe, {:label => 'PP&E'}, checked_value = true, unchecked_value = false 
+            = f.check_box :oily_waste_bin, {}, checked_value = true, unchecked_value = false 
+            = f.check_box :safety_cabinet, {}, checked_value = true, unchecked_value = false 
+            = f.check_box :lock_tag, {}, checked_value = true, unchecked_value = false
+            = f.check_box :eye_washer,{}, checked_value = true, unchecked_value = false 
+        %fieldset 
+          = f.select :inspections, choices = [['monthly', 'Once a month'], ['bi-monthly', 'Once every 2 months'], ['bi-annual', 'Once every 6 months']], {prompt: 'Select frequency', label: 'How often do inspections take place?'}, {:style => "width:2S0%;"} 
+        %fieldset 
+          = f.text_area :summary, placeholder: 'Summary of safety features'
+        %fieldset
+          %header 
+            %h4 What grade is this facility classified under?
+          .radio-container 
+            = f.radio_button :grade, 'PPA'
+            = f.radio_button :grade, 'PPB'
+            = f.radio_button :grade, 'PPC'
+            = f.radio_button :grade, 'PPD'
+        %fieldset
+          = f.submit "Submit", class: "btn btn-confirm" 
+      

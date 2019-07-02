@@ -1,0 +1,41 @@
+%article.dashboard
+  %header
+    %h3= "Admin Dashboard"
+  .row
+    .container
+      %article.creation
+        %header
+          %h4 Create Items
+        %ul
+          %li= link_to "Create Company", new_admin_company_path
+          %li= link_to "Create Work Item", new_admin_work_item_path
+      %article.view_consultants
+        %header
+          %h4 View Consultants
+        %ul.users
+          - @users.each do |user|
+            - if !user.admin?
+              %li= link_to user.full_name, admin_user_path(user)
+      %article.view_items
+        %header
+          %h4 Review Completed Items
+        - @completed_work_items.each do |work_item|
+          - if !work_item.review
+            %dl
+              %dt= link_to "Work Item #{work_item.id}", admin_work_item_path(work_item)
+              %dd= work_item.user_full_name
+              %dd= work_item.company_name
+              %dd= work_item.due_date
+      %article.view_archived_items
+        %header
+          %h4 Completed Items
+        - @completed_work_items.each do |work_item|
+          - if work_item.review
+            %dl
+              %dt= link_to "Work Item #{work_item.id}", admin_work_item_path(work_item)
+              %dd= work_item.user_full_name
+              %dd= work_item.company_name
+              %dd= work_item.due_date
+         
+
+        

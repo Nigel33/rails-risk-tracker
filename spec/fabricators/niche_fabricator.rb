@@ -1,0 +1,2 @@
+Fabricator(:niche) do 
+end 

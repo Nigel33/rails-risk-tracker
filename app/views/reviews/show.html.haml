@@ -1,0 +1,28 @@
+%section.review
+	.row
+		.col-sm-10.col-sm-offset-1
+			%header
+				%h3 Review for Work Item #{@work_item.id}
+				%h4 Work Item Assigned to: #{@work_item.user.full_name}
+			.container
+				.review-report
+					%header 
+						%h2 Scores
+					%dl
+						%dt Accuracy:
+						%dd #{@work_item.review.accuracy}%
+					%dl	 
+						%dt Timeliness:
+						%dd #{@work_item.review.timeliness}%
+					%dl 
+						%dt Grammar:
+						%dd #{@work_item.review.grammar}%
+					%dl
+						%dt Detail:
+						%dd #{@work_item.review.grammar}%
+					%dl.block
+						%dt Comments
+						%dd #{@work_item.review.comment}
+
+
+

@@ -1,0 +1,14 @@
+- if !work_item.completed?
+  %tr.work_item(data-work_item="#{work_item.id}" data-niche="#{work_item.niche_name}")
+    %td
+      %p= "#{work_item.id}"
+    %td
+      = link_to "#{work_item.company_name}", '', class: 'company', "data-id": "#{work_item.company.id}"
+    %td
+      = work_item.niche_name
+    %td
+      = work_item.user_full_name
+    %td= work_item.due_date
+    %td.view_report
+      - if work_item.review
+        = link_to "View", user_work_item_review_path(work_item.user, work_item, work_item.review), class: 'report'

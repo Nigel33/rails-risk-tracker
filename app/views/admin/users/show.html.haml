@@ -1,0 +1,53 @@
+%article.dashboard
+  %header
+    %h3= "#{@user.full_name}"
+  .row
+    .container
+      %article.profile
+        %header
+          %h4 Profile 
+        %dl
+          %dt Full Name:
+          %dd #{@user.full_name}
+        %dl
+          %dt Email: 
+          %dd #{@user.full_name}
+        %dl
+          %dt Pending Work Items: 
+          %dd #{pending_items_count(@user)}
+        %dl
+          %dt Completed Work Items: 
+          %dd #{completed_items_count(@user)}
+        %p= link_to "View #{@user.full_name}'s work items", user_work_items_path(@user)
+      %article.analytics
+        %header
+          %h4 Analytics 
+        %dl
+          %dt Accuracy:
+          %dd #{@user.accuracy_average}%
+        %dl
+          %dt Timeliness:
+          %dd #{@user.timeliness_average}%
+        %dl
+          %dt Grammar:
+          %dd #{@user.grammar_average}%
+        %dl
+          %dt Detail:
+          %dd #{@user.detail_average}%
+        %dl
+          %dt Total Score:
+          %dd #{@user.total_score}% 
+
+
+          
+
+          
+     
+
+
+
+        
+              
+         
+
+        

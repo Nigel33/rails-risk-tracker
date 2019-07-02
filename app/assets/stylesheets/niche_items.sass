@@ -1,0 +1,101 @@
+article.forms
+  margin-bottom: 20px
+  padding: 20px 10px
+  header
+    margin-bottom: 20px
+    h3, h4, h5
+      text-align: center
+      text-transform: capitalize
+    h3
+      font-size: 30px
+    h4
+      font-size: 25px
+      a
+        color: black
+    h5
+      margin-top: 10px
+  .container
+    background: white 
+    padding-top: 10px   
+    ul
+      width: 80%
+      margin: 15px auto 15px
+      li 
+        text-align: center
+        position: relative
+        input, .checkmark
+          top: 20%
+          height: 27px
+          width: 27px
+          position: absolute
+        .checkmark
+          background-color: white
+          border: 2px solid black
+          &:after
+            content: ""
+            position: absolute
+        input
+          z-index: 2
+          opacity: 0
+          &:hover 
+            ~ .checkmark 
+                background-color: #A0CC66
+          &:checked
+            ~ .checkmark 
+                background-color: #90B362
+                &:after
+                  left: 9px;
+                  top: 6px;
+                  width: 6px;
+                  height: 12px;
+                  border: solid white;
+                  border-width: 0 3px 3px 0;
+                  -webkit-transform: rotate(45deg);
+                  -ms-transform: rotate(45deg);
+                  transform: rotate(45deg);
+            ~ label
+                text-decoration: line-through
+
+
+        label
+          width: 50%
+          a
+            color: black
+            border-radius: 15px
+            font-size: 24px
+            margin: 0 auto
+            display: block
+            width: 80%
+            padding: 20px 0
+            margin-bottom: 10px
+            background-color: #99B3FF
+          a:hover, a:focus
+            text-decoration: none
+            background-color: #5970B3
+            color: white
+
+
+.container          
+  .submit 
+    padding: 10px 0
+    width: 50%
+    margin: 0 auto
+    text-align: center
+
+.report
+  text-align: center
+  margin: 15px
+  a 
+    border-radius: 10px
+    color: white
+    font-weight: bold
+    padding: 20px
+    background-color: #FF552A
+    &:hover
+      background-color: #99B3FF
+      color: black
+      text-decoration: none
+
+
+      
+          

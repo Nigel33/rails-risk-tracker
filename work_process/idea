@@ -1,0 +1,7 @@
+Background
+We work in a hypothetical insurance company called Envico which insures a few different types of commercial manufacturing operations in its portfolio. Currently, we maintain an excel application where the risk data associated with each business is stored in separate excel spreadsheets. Risk data for each business is  gathered by loss control consultants who make onsite visits. The tasks are currently assigned through email by managers to respective consultants. This risk data is used by underwriters to evaluate the risks of issuing a policy. 
+
+Solution
+We propose building an application called Risk Tracker which streamlines the workflow process of gathering and storing risk data for businessees in our portfolio. Managers can create work items through the interactive UI of the web applicatio nand assign it to consultants. Consultants can then log in and view the work items that need to be completed based on priority and complete the necessary forms in the application. Managers can then run quality control assessments on the consultants, generate reports and run analytics on the data. 
+
+   

@@ -1,0 +1,31 @@
+%article.forms
+  %header 
+    %h3 #{@work_item.company_name} 
+    %h4 (#{@work_item.niche_name})
+    %h5 Assigned to: #{@work_item.user_full_name}
+  .forms.row
+    .container
+      %ul
+        %li
+          %input(data-id="#{@work_item.id}-1" type="checkbox")
+          %span.checkmark
+          %label
+            = link_to new_or_edit_path(@work_item, @work_item.manufacturing_safety_feature, "manufacturings_manufacturing_safety_feature") do 
+              Safety Features
+        %li
+          %input(data-id="#{@work_item.id}-2" type="checkbox")
+          %span.checkmark
+          %label
+            = link_to "Equipment", new_or_edit_path(@work_item, @work_item.manufacturing_equipment, "manufacturings_manufacturing_equipment")
+        %li
+          %input(data-id="#{@work_item.id}-3" type="checkbox")
+          %span.checkmark
+          %label
+            = link_to "Property", new_or_edit_path(@work_item, @work_item.manufacturing_property, "manufacturings_manufacturing_property")
+        - if @work_item.completed? 
+          .submit(data-id="#{@work_item.id}" data-status="complete")
+            = link_to "Mark Item as Incomplete"
+        - else 
+          .submit(data-id="#{@work_item.id}" data-status="incomplete")
+            = link_to "Mark Item as complete"
+

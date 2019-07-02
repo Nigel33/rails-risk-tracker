@@ -1,0 +1,23 @@
+%article.work_items
+  %header
+    %h3= title
+    %h4 (#{@user.full_name})
+  .work_items.row
+    .container 
+      %section.toggle
+        %ul.nav.nav-tabs
+          = render 'links', completed: completed
+      .modal_container
+      %table.table
+        %thead
+          %tr
+            %th(width="5%") ID
+            %th(width="20%") Company Name
+            %th(width="15%") Niche
+            %th(width="20%") Consultant
+            %th(width="15%") Due Date
+            %th(width="20") Review
+        %tbody
+        - @user.work_items.each do |work_item|
+          = render list, work_item: work_item
+          
